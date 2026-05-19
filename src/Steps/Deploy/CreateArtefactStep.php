@@ -4,9 +4,9 @@ namespace Codinglabs\YoloAlpha\Steps\Deploy;
 
 use Codinglabs\YoloAlpha\Paths;
 use Codinglabs\YoloAlpha\Helpers;
+use Symfony\Component\Process\Process;
 use Codinglabs\YoloAlpha\Contracts\Step;
 use Codinglabs\YoloAlpha\Enums\StepResult;
-use Symfony\Component\Process\Process;
 
 class CreateArtefactStep implements Step
 {

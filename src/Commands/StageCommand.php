@@ -3,8 +3,8 @@
 namespace Codinglabs\YoloAlpha\Commands;
 
 use Codinglabs\YoloAlpha\Aws;
-use Codinglabs\YoloAlpha\Steps;
 use Illuminate\Support\Carbon;
+use Codinglabs\YoloAlpha\Steps;
 use Codinglabs\YoloAlpha\Concerns\UsesEc2;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;

@@ -5,8 +5,8 @@ namespace Codinglabs\YoloAlpha\Steps\Start\Web;
 use Codinglabs\YoloAlpha\Paths;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
-use Codinglabs\YoloAlpha\Enums\StepResult;
 use Symfony\Component\Process\Process;
+use Codinglabs\YoloAlpha\Enums\StepResult;
 use Codinglabs\YoloAlpha\Contracts\RunsOnAwsWeb;
 use Codinglabs\YoloAlpha\Concerns\DetectsSubdomains;
 

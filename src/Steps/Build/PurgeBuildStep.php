@@ -3,9 +3,9 @@
 namespace Codinglabs\YoloAlpha\Steps\Build;
 
 use Codinglabs\YoloAlpha\Paths;
+use Illuminate\Filesystem\Filesystem;
 use Codinglabs\YoloAlpha\Contracts\Step;
 use Codinglabs\YoloAlpha\Enums\StepResult;
-use Illuminate\Filesystem\Filesystem;
 
 class PurgeBuildStep implements Step
 {

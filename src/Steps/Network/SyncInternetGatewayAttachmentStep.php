@@ -2,8 +2,8 @@
 
 namespace Codinglabs\YoloAlpha\Steps\Network;
 
-use Codinglabs\YoloAlpha\Aws;
 use Illuminate\Support\Arr;
+use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\AwsResources;
 use Codinglabs\YoloAlpha\Contracts\Step;
 use Codinglabs\YoloAlpha\Enums\StepResult;

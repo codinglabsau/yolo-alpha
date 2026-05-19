@@ -2,13 +2,13 @@
 
 namespace Codinglabs\YoloAlpha\Steps\Build;
 
+use Illuminate\Support\Arr;
 use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Paths;
-use Illuminate\Support\Arr;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Enums\Iam;
-use Codinglabs\YoloAlpha\Contracts\Step;
 use Illuminate\Filesystem\Filesystem;
+use Codinglabs\YoloAlpha\Contracts\Step;
 
 class ConfigureEnvAndVersionStep implements Step
 {

@@ -6,9 +6,9 @@ use Aws\Command;
 use Aws\S3\Transfer;
 use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Paths;
+use Illuminate\Filesystem\Filesystem;
 use Codinglabs\YoloAlpha\Contracts\Step;
 use Codinglabs\YoloAlpha\Enums\StepResult;
-use Illuminate\Filesystem\Filesystem;
 
 class PushAssetsToS3Step implements Step
 {

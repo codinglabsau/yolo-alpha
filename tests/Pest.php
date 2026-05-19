@@ -1,7 +1,7 @@
 <?php
 
-use Codinglabs\YoloAlpha\Helpers;
 use Symfony\Component\Yaml\Yaml;
+use Codinglabs\YoloAlpha\Helpers;
 
 /*
 |--------------------------------------------------------------------------

@@ -3,8 +3,8 @@
 namespace Codinglabs\YoloAlpha\Steps;
 
 use Dotenv\Dotenv;
-use Codinglabs\YoloAlpha\Paths;
 use Illuminate\Support\Str;
+use Codinglabs\YoloAlpha\Paths;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 use Codinglabs\YoloAlpha\Contracts\RunsOnBuild;

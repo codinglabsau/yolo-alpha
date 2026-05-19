@@ -4,8 +4,8 @@ namespace Codinglabs\YoloAlpha\Commands;
 
 use Carbon\Carbon;
 use Codinglabs\YoloAlpha\Aws;
-use Codinglabs\YoloAlpha\Concerns\FormatsSshCommands;
 use Symfony\Component\Console\Input\InputArgument;
+use Codinglabs\YoloAlpha\Concerns\FormatsSshCommands;
 
 use function Laravel\Prompts\table;
 

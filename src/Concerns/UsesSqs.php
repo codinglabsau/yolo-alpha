@@ -2,8 +2,8 @@
 
 namespace Codinglabs\YoloAlpha\Concerns;
 
-use Codinglabs\YoloAlpha\Aws;
 use Illuminate\Support\Str;
+use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Exceptions\ResourceDoesNotExistException;
 
 trait UsesSqs

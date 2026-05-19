@@ -5,11 +5,11 @@ namespace Codinglabs\YoloAlpha\Commands;
 use Codinglabs\YoloAlpha\Paths;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
+use Symfony\Component\Process\Process;
 use Codinglabs\YoloAlpha\Concerns\UsesEc2;
 use Codinglabs\YoloAlpha\Enums\ServerGroup;
-use Symfony\Component\Process\Process;
-use Codinglabs\YoloAlpha\Concerns\FormatsSshCommands;
 use Symfony\Component\Console\Input\InputArgument;
+use Codinglabs\YoloAlpha\Concerns\FormatsSshCommands;
 
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\text;

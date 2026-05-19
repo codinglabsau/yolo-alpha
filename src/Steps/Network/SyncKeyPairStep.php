@@ -2,9 +2,9 @@
 
 namespace Codinglabs\YoloAlpha\Steps\Network;
 
+use Illuminate\Support\Arr;
 use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Paths;
-use Illuminate\Support\Arr;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
 use Codinglabs\YoloAlpha\AwsResources;

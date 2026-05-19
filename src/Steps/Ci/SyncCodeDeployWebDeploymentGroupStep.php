@@ -2,8 +2,8 @@
 
 namespace Codinglabs\YoloAlpha\Steps\Ci;
 
-use Codinglabs\YoloAlpha\Aws;
 use Illuminate\Support\Arr;
+use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
 use Codinglabs\YoloAlpha\AwsResources;

@@ -6,11 +6,11 @@ use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
 use Codinglabs\YoloAlpha\Concerns\RegistersAws;
-use Codinglabs\YoloAlpha\Concerns\HasAfterCallbacks;
 use Symfony\Component\Console\Input\InputInterface;
+use Codinglabs\YoloAlpha\Concerns\HasAfterCallbacks;
 use Symfony\Component\Console\Output\OutputInterface;
-use Codinglabs\YoloAlpha\Concerns\ChecksIfCommandsShouldBeRunning;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
+use Codinglabs\YoloAlpha\Concerns\ChecksIfCommandsShouldBeRunning;
 
 use function Laravel\Prompts\error;
 

@@ -13,19 +13,19 @@ use Aws\Ssm\SsmClient;
 use Aws\Sts\StsClient;
 use GuzzleHttp\Client;
 use Codinglabs\YoloAlpha\Aws;
+use Aws\Route53\Route53Client;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
-use Aws\Route53\Route53Client;
 use Aws\CloudWatch\CloudWatchClient;
 use Aws\CodeDeploy\CodeDeployClient;
 use Aws\AutoScaling\AutoScalingClient;
 use Aws\EventBridge\EventBridgeClient;
-use Codinglabs\YoloAlpha\Enums\ServerGroup;
 use Aws\Credentials\CredentialProvider;
 use GuzzleHttp\Exception\ConnectException;
+use Codinglabs\YoloAlpha\Enums\ServerGroup;
 use Aws\CloudWatchLogs\CloudWatchLogsClient;
-use Codinglabs\YoloAlpha\Exceptions\IntegrityCheckException;
 use Aws\ElasticLoadBalancingV2\ElasticLoadBalancingV2Client;
+use Codinglabs\YoloAlpha\Exceptions\IntegrityCheckException;
 
 trait RegistersAws
 {

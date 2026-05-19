@@ -3,9 +3,9 @@
 namespace Codinglabs\YoloAlpha\Steps\Image;
 
 use Codinglabs\YoloAlpha\Helpers;
+use Symfony\Component\Process\Process;
 use Codinglabs\YoloAlpha\Contracts\Step;
 use Codinglabs\YoloAlpha\Enums\StepResult;
-use Symfony\Component\Process\Process;
 use Codinglabs\YoloAlpha\Concerns\FormatsSshCommands;
 
 class WaitForUserDataToExecuteStep implements Step

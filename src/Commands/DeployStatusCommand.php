@@ -6,8 +6,8 @@ use Carbon\Carbon;
 use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Enums\ServerGroup;
-use Codinglabs\YoloAlpha\Concerns\UsesCodeDeploy;
 use Symfony\Component\Console\Input\InputOption;
+use Codinglabs\YoloAlpha\Concerns\UsesCodeDeploy;
 use Symfony\Component\Console\Input\InputArgument;
 
 use function Laravel\Prompts\info;

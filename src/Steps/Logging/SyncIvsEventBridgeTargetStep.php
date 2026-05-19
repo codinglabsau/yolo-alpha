@@ -2,8 +2,8 @@
 
 namespace Codinglabs\YoloAlpha\Steps\Logging;
 
-use Codinglabs\YoloAlpha\Aws;
 use Illuminate\Support\Arr;
+use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Manifest;
 use Codinglabs\YoloAlpha\AwsResources;
 use Codinglabs\YoloAlpha\Contracts\Step;

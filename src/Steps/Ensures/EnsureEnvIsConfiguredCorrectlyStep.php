@@ -8,9 +8,9 @@ use Codinglabs\YoloAlpha\Paths;
 use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
 use Codinglabs\YoloAlpha\Enums\Iam;
+use Illuminate\Filesystem\Filesystem;
 use Codinglabs\YoloAlpha\Contracts\Step;
 use Codinglabs\YoloAlpha\Enums\StepResult;
-use Illuminate\Filesystem\Filesystem;
 use Codinglabs\YoloAlpha\Exceptions\IntegrityCheckException;
 
 class EnsureEnvIsConfiguredCorrectlyStep implements Step

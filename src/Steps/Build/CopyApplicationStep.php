@@ -3,9 +3,9 @@
 namespace Codinglabs\YoloAlpha\Steps\Build;
 
 use Codinglabs\YoloAlpha\Paths;
-use Codinglabs\YoloAlpha\Contracts\Step;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
+use Codinglabs\YoloAlpha\Contracts\Step;
 
 class CopyApplicationStep implements Step
 {
