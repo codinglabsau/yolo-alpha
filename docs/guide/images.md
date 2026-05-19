@@ -5,7 +5,7 @@ With resources provisioned, the next step is to create an Amazon Machine Image (
 ## Creating an Image
 
 ```bash
-yolo image:create <environment>
+yolo-alpha image:create <environment>
 ```
 
 Images can be updated over time to bring in improvements like new PHP versions.
@@ -15,7 +15,7 @@ Images can be updated over time to bring in improvements like new PHP versions.
 To prepare a new stage, run:
 
 ```bash
-yolo stage <environment>
+yolo-alpha stage <environment>
 ```
 
 This interactive command walks you through updating or replacing the current stage configuration.

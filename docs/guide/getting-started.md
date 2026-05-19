@@ -15,13 +15,13 @@ Install YOLO via Composer:
 composer require codinglabsau/yolo-alpha
 ```
 
-The CLI is available at `vendor/bin/yolo`, or just `yolo` if `./vendor/bin` is in your PATH.
+The CLI is available at `vendor/bin/yolo-alpha`, or just `yolo-alpha` if `./vendor/bin` is in your PATH.
 
-Run `yolo` to see all available commands.
+Run `yolo-alpha` to see all available commands.
 
 ## Initialisation
 
-Run `yolo init` to set up your project. This will:
+Run `yolo-alpha init` to set up your project. This will:
 
 1. Create a `yolo.yml` manifest with a boilerplate production environment
 2. Add entries to `.gitignore`

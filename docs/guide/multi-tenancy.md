@@ -24,11 +24,11 @@ Each tenant key must be unique and is used to identify resources throughout YOLO
 Use the tenant-specific sync commands:
 
 ```bash
-yolo sync:landlord <environment>   # Provision landlord resources
-yolo sync:tenant <environment>     # Provision per-tenant resources
+yolo-alpha sync:landlord <environment>   # Provision landlord resources
+yolo-alpha sync:tenant <environment>     # Provision per-tenant resources
 ```
 
-Or run `yolo sync <environment>` to provision everything including tenants.
+Or run `yolo-alpha sync <environment>` to provision everything including tenants.
 
 ## Domains
 
