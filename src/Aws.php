@@ -16,6 +16,7 @@ use Aws\CloudWatch\CloudWatchClient;
 use Aws\CodeDeploy\CodeDeployClient;
 use Aws\AutoScaling\AutoScalingClient;
 use Aws\EventBridge\EventBridgeClient;
+use Aws\IVSRealTime\IVSRealTimeClient;
 use Aws\CloudWatchLogs\CloudWatchLogsClient;
 use Aws\ElasticLoadBalancingV2\ElasticLoadBalancingV2Client;
 
@@ -111,6 +112,11 @@ class Aws
     public static function iam(): IamClient
     {
         return Helpers::app('iam');
+    }
+
+    public static function ivsRealTime(): IVSRealTimeClient
+    {
+        return Helpers::app('ivsRealTime');
     }
 
     public static function rds(): RdsClient

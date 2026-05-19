@@ -100,6 +100,11 @@ class Manifest
             || static::get('aws.ivs.logging') === true;
     }
 
+    public static function ivsRealtimeRecordingEnabled(): bool
+    {
+        return ! empty(static::get('aws.ivs.recording.real_time'));
+    }
+
     /**
      * @return array<int, array{
      *     domain: string,

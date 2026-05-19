@@ -20,6 +20,7 @@ use Aws\CloudWatch\CloudWatchClient;
 use Aws\CodeDeploy\CodeDeployClient;
 use Aws\AutoScaling\AutoScalingClient;
 use Aws\EventBridge\EventBridgeClient;
+use Aws\IVSRealTime\IVSRealTimeClient;
 use Aws\Credentials\CredentialProvider;
 use GuzzleHttp\Exception\ConnectException;
 use Codinglabs\YoloAlpha\Enums\ServerGroup;
@@ -48,6 +49,7 @@ trait RegistersAws
         Helpers::app()->singleton('eventBridge', fn () => new EventBridgeClient($arguments));
         Helpers::app()->singleton('elasticLoadBalancingV2', fn () => new ElasticLoadBalancingV2Client($arguments));
         Helpers::app()->singleton('iam', fn () => new IamClient($arguments));
+        Helpers::app()->singleton('ivsRealTime', fn () => new IVSRealTimeClient($arguments));
         Helpers::app()->singleton('rds', fn () => new RdsClient($arguments));
         Helpers::app()->singleton('route53', fn () => new Route53Client($arguments));
         Helpers::app()->singleton('s3', fn () => new S3Client($arguments));

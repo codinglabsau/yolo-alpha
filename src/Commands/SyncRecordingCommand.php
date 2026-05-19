@@ -1,0 +1,25 @@
+<?php
+
+namespace Codinglabs\YoloAlpha\Commands;
+
+use Codinglabs\YoloAlpha\Steps;
+use Symfony\Component\Console\Input\InputArgument;
+
+class SyncRecordingCommand extends SteppedCommand
+{
+    protected array $steps = [
+        Steps\Recording\SyncIvsRealtimeRecordingBucketStep::class,
+        Steps\Recording\SyncIvsStorageConfigurationStep::class,
+        Steps\Recording\SyncIvsEncoderConfigurationStep::class,
+    ];
+
+    protected function configure(): void
+    {
+        $this
+            ->setName('sync:recording')
+            ->addArgument('environment', InputArgument::REQUIRED, 'The environment name')
+            ->addOption('dry-run', null, null, 'Run the command without making changes')
+            ->addOption('no-progress', null, null, 'Hide the progress output')
+            ->setDescription('Sync the IVS recording resources for the given environment');
+    }
+}

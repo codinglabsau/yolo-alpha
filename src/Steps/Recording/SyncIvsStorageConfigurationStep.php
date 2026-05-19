@@ -1,0 +1,62 @@
+<?php
+
+namespace Codinglabs\YoloAlpha\Steps\Recording;
+
+use Illuminate\Support\Arr;
+use Codinglabs\YoloAlpha\Aws;
+use Codinglabs\YoloAlpha\Helpers;
+use Codinglabs\YoloAlpha\Manifest;
+use Codinglabs\YoloAlpha\Contracts\Step;
+use Codinglabs\YoloAlpha\Enums\StepResult;
+
+use function Laravel\Prompts\note;
+
+class SyncIvsStorageConfigurationStep implements Step
+{
+    public function __invoke(array $options): StepResult
+    {
+        if (! Manifest::ivsRealtimeRecordingEnabled()) {
+            return StepResult::SKIPPED;
+        }
+
+        $bucket = SyncIvsRealtimeRecordingBucketStep::bucketName();
+        $name = Helpers::keyedResourceName('ivs-storage');
+
+        $response = Aws::ivsRealTime()->listStorageConfigurations();
+        $all = $response['storageConfigurations'];
+        while ($nextToken = $response['nextToken'] ?? null) {
+            $response = Aws::ivsRealTime()->listStorageConfigurations(['nextToken' => $nextToken]);
+            $all = array_merge($all, $response['storageConfigurations']);
+        }
+        $existing = collect($all)->first(fn ($config) => Arr::get($config, 's3.bucketName') === $bucket);
+
+        if ($existing) {
+            note(sprintf('IVS StorageConfiguration ARN: %s', $existing['arn']));
+            note(sprintf('Set AWS_IVS_STORAGE_CONFIGURATION_ARN=%s', $existing['arn']));
+
+            return StepResult::SYNCED;
+        }
+
+        if (! Arr::get($options, 'dry-run')) {
+            $result = Aws::ivsRealTime()->createStorageConfiguration([
+                'name' => $name,
+                's3' => [
+                    'bucketName' => $bucket,
+                ],
+                'tags' => [
+                    'yolo:environment' => Helpers::app('environment'),
+                    'Name' => $name,
+                ],
+            ]);
+
+            $arn = $result['storageConfiguration']['arn'];
+
+            note(sprintf('IVS StorageConfiguration ARN: %s', $arn));
+            note(sprintf('Set AWS_IVS_STORAGE_CONFIGURATION_ARN=%s', $arn));
+
+            return StepResult::CREATED;
+        }
+
+        return StepResult::WOULD_CREATE;
+    }
+}
