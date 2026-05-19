@@ -1,0 +1,44 @@
+{
+  "name": "codinglabsau/yolo-alpha",
+  "description": "YOLO Alpha — pre-1.0 EC2/ASG deployer for Laravel. Frozen, maintenance-only. See codinglabsau/yolo for the active 1.0 (Fargate) line.",
+  "homepage": "https://github.com/codinglabsau/yolo-alpha",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "aws/aws-sdk-php": "^3.324",
+    "guzzlehttp/guzzle": "^7.9",
+    "illuminate/container": "^12|^13",
+    "illuminate/filesystem": "^12|^13",
+    "illuminate/support": "^12|^13",
+    "joetannenbaum/chewie": "^0.1.8",
+    "nesbot/carbon": "^3.10",
+    "symfony/console": "^7.1",
+    "symfony/yaml": "^7.1",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.24",
+    "pestphp/pest": "^3.7",
+    "phpstan/phpstan": "^1.12",
+    "spatie/ray": "^1.41"
+  },
+  "autoload": {
+    "psr-4": {
+      "Codinglabs\\YoloAlpha\\": "src"
+    }
+  },
+  "bin": [
+    "yolo-alpha"
+  ],
+  "scripts": {
+    "fix": "vendor/bin/php-cs-fixer fix"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
