@@ -27,7 +27,7 @@ use Codinglabs\YoloAlpha\Helpers;
 |
 */
 
-$tempDir = sys_get_temp_dir() . '/yolo-test';
+$tempDir = sys_get_temp_dir() . '/yolo-test-' . (getenv('TEST_TOKEN') ?: getmypid());
 
 @mkdir($tempDir, 0755, true);
 
