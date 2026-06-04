@@ -42,6 +42,9 @@ environments:
       codedeploy:
         strategy: without-load-balancing
       sqs:
+        queues:
+          - default
+          - high
         depth-alarm-evaluation-periods: 3
         depth-alarm-period: 300
         depth-alarm-threshold: 100
@@ -117,6 +120,48 @@ aws:
 
 `logging` toggles the EventBridge → CloudWatch pipeline; `log-retention-days` overrides the log retention.
 
+#### IVS Real-Time recording
+
+Enable S3 composite recording for IVS Real-Time stages:
+
+```yaml
+aws:
+  ivs:
+    recording:
+      real_time: true
+```
+
+Setting `recording.real_time` to `true` provisions the S3 bucket, IVS `StorageConfiguration`, and `EncoderConfiguration` required for composite recording.
+
+| Key | Description |
+|---|---|
+| `recording.real_time` | Set to `true` to enable IVS Real-Time composite recording provisioning. Provisions an auto-named S3 bucket (`yolo-{env}-{app}-ivs-realtime-recordings`), a `StorageConfiguration` pointing to that bucket, and an `EncoderConfiguration` (720p30). |
+
+After running `sync:recording`, three values are printed for the app's `.env`:
+
+| Env var | Description |
+|---|---|
+| `AWS_IVS_REALTIME_RECORDINGS_BUCKET` | Name of the S3 bucket IVS writes recordings to |
+| `AWS_IVS_STORAGE_CONFIGURATION_ARN` | ARN passed to `createStage` for automatic participant recording |
+| `AWS_IVS_ENCODER_CONFIGURATION_ARN` | ARN passed to `startComposition` to define video resolution and bitrate |
+
+Omitting `recording` entirely skips all recording steps without affecting existing resources.
+
+### `aws.sqs.queues`
+
+Defines the SQS queue types provisioned per tenant. Each type is appended to the tenant queue name — `default` uses the base name, any other type appends `-{type}`.
+
+```yaml
+aws:
+  sqs:
+    queues:
+      - default  # → yolo-{env}-{app}-{tenantId}
+      - high     # → yolo-{env}-{app}-{tenantId}-high
+```
+
+Omitting `queues` defaults to `[default]`, preserving existing behaviour. A CloudWatch depth alarm is created for each queue type.
+
+Use additional queue types to isolate time-sensitive jobs — for example, routing live-event messages to a dedicated high-priority queue so they don't compete with default workers.
 ### `mysqldump`
 
 Enable scheduled MySQL backups via `mysqldump`.
