@@ -162,6 +162,7 @@ aws:
 Omitting `queues` defaults to `[default]`, preserving existing behaviour. A CloudWatch depth alarm is created for each queue type.
 
 Use additional queue types to isolate time-sensitive jobs — for example, routing live-event messages to a dedicated high-priority queue so they don't compete with default workers.
+
 ### `mysqldump`
 
 Enable scheduled MySQL backups via `mysqldump`.
