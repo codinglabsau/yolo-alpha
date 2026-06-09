@@ -4,7 +4,7 @@
 
 | Command | Description |
 |---|---|
-| `init` | Initialise `yolo.yml` manifest |
+| `init` | Initialise `yolo-alpha.yml` manifest |
 | `build <env>` | Prepare application for deployment |
 | `deploy <env>` | Build and deploy to AWS |
 | `deploy:status <env>` | Track in-progress deployments |

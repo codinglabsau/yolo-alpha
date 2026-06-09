@@ -23,11 +23,11 @@ Run `yolo-alpha` to see all available commands.
 
 Run `yolo-alpha init` to set up your project. This will:
 
-1. Create a `yolo.yml` manifest with a boilerplate production environment
+1. Create a `yolo-alpha.yml` manifest with a boilerplate production environment
 2. Add entries to `.gitignore`
 3. Prompt for initial configuration values
 
-After initialising, customise the `yolo.yml` manifest to suit your application.
+After initialising, customise the `yolo-alpha.yml` manifest to suit your application.
 
 ## AWS Authentication
 

@@ -88,7 +88,7 @@ class SyncEc2SecurityGroupStep implements Step
         } catch (ResourceDoesNotExistException) {
             if (! Arr::get($options, 'dry-run')) {
                 if (Manifest::get('aws.ec2.security-group')) {
-                    throw IntegrityCheckException::make('yolo.yml specifies a custom EC2 security group which does not exist');
+                    throw IntegrityCheckException::make('yolo-alpha.yml specifies a custom EC2 security group which does not exist');
                 }
 
                 $name = Helpers::keyedResourceName(SecurityGroup::EC2_SECURITY_GROUP, exclusive: false);

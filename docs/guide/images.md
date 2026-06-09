@@ -29,7 +29,7 @@ This interactive command walks you through updating or replacing the current sta
 | Update EC2 instance profile | Update |
 | Update AMI | Create |
 
-When creating a new stage, the `yolo.yml` manifest is updated to point to the new autoscaling groups on the next deployment.
+When creating a new stage, the `yolo-alpha.yml` manifest is updated to point to the new autoscaling groups on the next deployment.
 
 ::: tip
 Rotating in a new image has no impact on existing traffic until the updated manifest is deployed. The previous deployment continues serving requests and autoscaling as normal.

@@ -16,18 +16,18 @@ class InitCommand extends Command
     {
         $this
             ->setName('init')
-            ->setDescription('Create the yolo.yml manifest in the current app root');
+            ->setDescription('Create the yolo-alpha.yml manifest in the current app root');
     }
 
     public function handle(): void
     {
         if (Manifest::exists()) {
-            if (! confirm('A yolo.yml manifest already exists in the current directory. Do you want to overwrite it?', default: false)) {
+            if (! confirm('A yolo-alpha.yml manifest already exists in the current directory. Do you want to overwrite it?', default: false)) {
                 return;
             }
         }
 
-        intro('Initialising yolo.yml');
+        intro('Initialising yolo-alpha.yml');
 
         $this->gitIgnoreFilesAndDirectories();
         $this->initialiseManifest();
@@ -39,7 +39,7 @@ class InitCommand extends Command
     protected function initialiseManifest(): void
     {
         file_put_contents(
-            Paths::base('yolo.yml'),
+            Paths::manifest(),
             str_replace(
                 search: [
                     '{NAME}',
@@ -51,7 +51,7 @@ class InitCommand extends Command
                     text('What is the account ID of the AWS account you want to deploy to?'),
                     text('Which AWS region do you want to deploy to?', default: env('AWS_DEFAULT_REGION', 'ap-southeast-2')),
                 ],
-                subject: file_get_contents(Paths::stubs('yolo.yml.stub'))
+                subject: file_get_contents(Paths::stubs('yolo-alpha.yml.stub'))
             )
         );
 

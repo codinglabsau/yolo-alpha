@@ -1,6 +1,6 @@
 # Manifest
 
-The `yolo.yml` file is the single source of truth for your application's infrastructure configuration.
+The `yolo-alpha.yml` file is the single source of truth for your application's infrastructure configuration.
 
 ## Complete Reference
 

@@ -23,7 +23,7 @@ use Codinglabs\YoloAlpha\Helpers;
 |
 | Set up a temporary manifest and environment so tests can use Manifest,
 | Helpers::keyedResourceName(), and other static helpers without touching
-| a real yolo.yml or AWS.
+| a real yolo-alpha.yml or AWS.
 |
 */
 
@@ -35,7 +35,7 @@ if (! defined('BASE_PATH')) {
     define('BASE_PATH', $tempDir);
 }
 
-file_put_contents($tempDir . '/yolo.yml', Yaml::dump([
+file_put_contents($tempDir . '/yolo-alpha.yml', Yaml::dump([
     'name' => 'my-app',
     'environments' => [
         'testing' => [],
@@ -57,7 +57,7 @@ Helpers::app()->instance('environment', 'testing');
 
 function writeManifest(array $config, string $environment = 'testing'): void
 {
-    file_put_contents(BASE_PATH . '/yolo.yml', Yaml::dump([
+    file_put_contents(BASE_PATH . '/yolo-alpha.yml', Yaml::dump([
         'name' => 'my-app',
         'environments' => [
             $environment => $config,
