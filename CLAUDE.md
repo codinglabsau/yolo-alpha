@@ -78,7 +78,7 @@ Traits for AWS service interactions: `UsesEc2`, `UsesIam`, `UsesAutoscaling`, `U
 
 ### Configuration
 
-- `Manifest.php` - Reads/writes `yolo.yml` configuration
+- `Manifest.php` - Reads/writes `yolo-alpha.yml` configuration
 - `Paths.php` - Centralizes file path resolution
 - `Helpers.php` - Utility functions and container access
 

@@ -19,7 +19,7 @@ describe('path building', function () {
     });
 
     it('resolves manifest path', function () {
-        expect(Paths::manifest())->toBe(BASE_PATH . '/yolo.yml');
+        expect(Paths::manifest())->toBe(BASE_PATH . '/yolo-alpha.yml');
     });
 
     it('resolves artefact path', function () {

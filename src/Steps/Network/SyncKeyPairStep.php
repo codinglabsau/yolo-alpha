@@ -29,7 +29,7 @@ class SyncKeyPairStep implements Step
         } catch (ResourceDoesNotExistException $e) {
             if (! Arr::get($options, 'dry-run')) {
                 if (Manifest::get('aws.ec2.key-pair')) {
-                    throw IntegrityCheckException::make('yolo.yml specifies a custom EC2 key pair which does not exist');
+                    throw IntegrityCheckException::make('yolo-alpha.yml specifies a custom EC2 key pair which does not exist');
                 }
 
                 $name = Manifest::get('aws.ec2.key-pair', Helpers::keyedResourceName(exclusive: false));

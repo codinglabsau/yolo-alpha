@@ -45,7 +45,7 @@ abstract class Command extends SymfonyCommand
         }
 
         if (! Manifest::exists()) {
-            error("Could not find yolo.yml manifest in the current directory - run 'yolo init' to create one");
+            error("Could not find yolo-alpha.yml manifest in the current directory - run 'yolo init' to create one");
 
             return 1;
         }

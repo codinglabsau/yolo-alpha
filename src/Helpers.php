@@ -49,7 +49,7 @@ class Helpers
 
     public static function manifestName(): string
     {
-        return 'yolo.yml';
+        return 'yolo-alpha.yml';
     }
 
     public static function versionName(): string
