@@ -3,6 +3,7 @@
 namespace Codinglabs\YoloAlpha\Commands;
 
 use Codinglabs\YoloAlpha\Paths;
+use Codinglabs\YoloAlpha\Helpers;
 use Codinglabs\YoloAlpha\Manifest;
 
 use function Laravel\Prompts\info;
@@ -83,8 +84,8 @@ class InitCommand extends Command
             file_put_contents(
                 Paths::base('.gitignore'),
                 '.yolo' . PHP_EOL .
-                '.env.staging' . PHP_EOL .
-                '.env.production' . PHP_EOL,
+                Helpers::envFileName('staging') . PHP_EOL .
+                Helpers::envFileName('production') . PHP_EOL,
                 FILE_APPEND
             );
         }
@@ -92,9 +93,9 @@ class InitCommand extends Command
 
     protected function initialiseEnv(): void
     {
-        if (! file_exists(Paths::base('.env.production'))) {
+        if (! file_exists(Paths::base(Helpers::envFileName('production')))) {
             file_put_contents(
-                Paths::base('.env.production'),
+                Paths::base(Helpers::envFileName('production')),
                 'APP_ENV=production' . PHP_EOL .
                 'APP_KEY=' . PHP_EOL .
                 'APP_DEBUG=false' . PHP_EOL .

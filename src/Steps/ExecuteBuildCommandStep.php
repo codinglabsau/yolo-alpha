@@ -5,6 +5,7 @@ namespace Codinglabs\YoloAlpha\Steps;
 use Dotenv\Dotenv;
 use Illuminate\Support\Str;
 use Codinglabs\YoloAlpha\Paths;
+use Codinglabs\YoloAlpha\Helpers;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 use Codinglabs\YoloAlpha\Contracts\RunsOnBuild;
@@ -20,7 +21,7 @@ class ExecuteBuildCommandStep implements ExecutesCommandStep, RunsOnBuild
         // and VITE_* keys so 'vite build' works as expected. This is preferred
         // to loading the entire .env because we don't want to accidentally
         // call important services from our build pipeline.
-        $dotenv = Dotenv::parse($this->filesystem->get(Paths::build(".env.$this->environment.tmp")));
+        $dotenv = Dotenv::parse($this->filesystem->get(Paths::build(Helpers::envFileName($this->environment) . '.tmp')));
 
         $process = new Process(
             command: explode(' ', $this->command),

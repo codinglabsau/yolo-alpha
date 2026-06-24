@@ -52,6 +52,15 @@ class Helpers
         return 'yolo-alpha.yml';
     }
 
+    public static function envFileName(?string $environment = null): string
+    {
+        $environment ??= static::environment();
+
+        // yolo-alpha reads its own suffixed env file so it never collides with
+        // YOLO v1's canonical .env.<environment> during the side-by-side run.
+        return ".env.$environment-alpha";
+    }
+
     public static function versionName(): string
     {
         return 'APP_VERSION';
