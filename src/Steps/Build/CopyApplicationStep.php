@@ -3,6 +3,7 @@
 namespace Codinglabs\YoloAlpha\Steps\Build;
 
 use Codinglabs\YoloAlpha\Paths;
+use Codinglabs\YoloAlpha\Helpers;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 use Codinglabs\YoloAlpha\Contracts\Step;
@@ -20,7 +21,7 @@ class CopyApplicationStep implements Step
 
         $include = [
             // files
-            ".env.$this->environment",
+            Helpers::envFileName($this->environment),
         ];
 
         $exclude = [

@@ -2,6 +2,7 @@
 
 namespace Codinglabs\YoloAlpha\Commands;
 
+use Codinglabs\YoloAlpha\Helpers;
 use Symfony\Component\Console\Input\InputArgument;
 use Codinglabs\YoloAlpha\Steps\Build\RetrieveEnvFileStep;
 
@@ -22,7 +23,7 @@ class EnvPullCommand extends Command
     {
         $environment = $this->argument('environment');
 
-        note("Downloading .env.{$environment}...");
+        note('Downloading ' . Helpers::envFileName($environment) . '...');
 
         (new RetrieveEnvFileStep())();
 

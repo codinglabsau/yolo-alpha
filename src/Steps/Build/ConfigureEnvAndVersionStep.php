@@ -27,7 +27,7 @@ class ConfigureEnvAndVersionStep implements Step
         );
 
         $this->filesystem->append(
-            Paths::build(".env.$this->environment"),
+            Paths::build(Helpers::envFileName($this->environment)),
             $this->generateValues([
                 'APP_VERSION' => $appVersion,
                 'ASSET_URL' => Paths::assetUrl($appVersion),

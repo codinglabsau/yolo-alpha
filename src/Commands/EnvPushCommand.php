@@ -6,6 +6,7 @@ use Dotenv\Dotenv;
 use Codinglabs\YoloAlpha\Aws;
 use Codinglabs\YoloAlpha\Paths;
 use Aws\S3\Exception\S3Exception;
+use Codinglabs\YoloAlpha\Helpers;
 use Symfony\Component\Console\Input\InputArgument;
 use Codinglabs\YoloAlpha\Steps\Build\RetrieveEnvFileStep;
 
@@ -29,7 +30,7 @@ class EnvPushCommand extends Command
     public function handle(): void
     {
         $environment = $this->argument('environment');
-        $filename = ".env.$environment";
+        $filename = Helpers::envFileName($environment);
         $path = Paths::base($filename);
         $temporaryFilename = "$filename.tmp";
 

@@ -29,6 +29,18 @@ describe('keyedResourceName', function () {
     });
 });
 
+describe('envFileName', function () {
+    it('suffixes the given environment with -alpha', function () {
+        expect(Helpers::envFileName('production'))
+            ->toBe('.env.production-alpha');
+    });
+
+    it('falls back to the current environment', function () {
+        expect(Helpers::envFileName())
+            ->toBe('.env.testing-alpha');
+    });
+});
+
 describe('keyedEnvName', function () {
     it('formats environment variable name', function () {
         expect(Helpers::keyedEnvName('DB_HOST'))
