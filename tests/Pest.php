@@ -27,7 +27,9 @@ use Codinglabs\YoloAlpha\Helpers;
 |
 */
 
-$tempDir = sys_get_temp_dir() . '/yolo-test';
+// One dir per parallel worker (TEST_TOKEN), so no worker reads a manifest
+// another is mid-way through rewriting.
+$tempDir = sys_get_temp_dir() . '/yolo-test' . (getenv('TEST_TOKEN') ?: '');
 
 @mkdir($tempDir, 0755, true);
 
