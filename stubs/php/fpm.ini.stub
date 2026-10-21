@@ -1,5 +1,6 @@
 ; Environment configuration for FPM
 expose_php = Off
+session.upload_progress.enabled = Off
 session.gc_probability = '1'
 session.gc_divisor = '100'
 session.gc_maxlifetime = '14400'
